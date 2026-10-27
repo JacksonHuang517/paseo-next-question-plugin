@@ -28,6 +28,12 @@ export const showSuggestionRpc = defineRpc({
   output: z.object({ shown: z.boolean() }),
 });
 
+export const validateSuggestionRpc = defineRpc({
+  name: "suggestion.validate",
+  input: z.object({ agentId: z.string().min(1), source: sourceSchema }),
+  output: z.object({ current: z.boolean() }),
+});
+
 export const sendSuggestionRpc = defineRpc({
   name: "suggestion.send",
   input: z.object({

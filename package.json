@@ -1,6 +1,6 @@
 {
   "name": "@jacksonhuang517/paseo-next-question",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "One editable Codex-powered follow-up question below completed Paseo replies, without a custom client.",

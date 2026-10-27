@@ -7,6 +7,7 @@ import {
   resolveSuggestionRpc,
   sendSuggestionRpc,
   showSuggestionRpc,
+  validateSuggestionRpc,
 } from "./shared/rpc.js";
 import { ROW_KIND } from "./shared/ui.js";
 
@@ -23,6 +24,10 @@ export default function contribute(server: PluginServerContext) {
   server.handle(sendSuggestionRpc, (input, { paseo }) => {
     sender ??= createSender(paseo);
     return sender(input);
+  });
+  server.handle(validateSuggestionRpc, async ({ agentId, source }, { paseo }) => {
+    const latest = await readLatestSource(paseo, agentId);
+    return { current: latest !== null && sourceKey(latest) === sourceKey(source) };
   });
   server.handle(showSuggestionRpc, async ({ agentId }, { paseo }) => {
     const source = await readLatestSource(paseo, agentId);
