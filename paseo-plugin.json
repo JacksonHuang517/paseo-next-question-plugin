@@ -1,0 +1,15 @@
+{
+  "id": "next-question",
+  "name": "Next Question",
+  "description": "One editable Codex-powered follow-up question below completed replies, without a custom Paseo client.",
+  "requirements": {
+    "paseo": ">=0.13.0 <0.14.0"
+  },
+  "translations": {
+    "zh-CN": {
+      "name": "下一问",
+      "description": "在回复下方生成一条可编辑的 Codex 后续问题，无需定制版 Paseo。"
+    }
+  },
+  "media": ["assets/screenshot.png", "assets/edit.png", "assets/compact-dark.png"]
+}
